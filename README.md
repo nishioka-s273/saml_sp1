@@ -3,3 +3,5 @@
 - [ ] MySQL環境構築
 - [ ] URI等齟齬修正
 - [ ] 送受信情報見直し(Cookie/HTTP_POST)
+
+*MySQL環境構築前にphpバージョン更新(5.6)*
