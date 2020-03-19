@@ -1,6 +1,6 @@
 <?php
 $db_host='localhost';
 $db_database='simplesaml';
-$db_username='ssaml';
-$db_password='pswd_sp1';
+$db_username='root';
+$db_password='admin';
 ?>
