@@ -37,7 +37,7 @@ if(!$db_select){
     else if($uid == NULL) {
 	// 最新のユーザに対応するユーザIDの番号を取得する
 	$query2 = "SELECT uid_num FROM users ORDER BY uid DESC LIMIT 1";
-    	$result2 = mysqli_query($connection, $query2);
+    $result2 = mysqli_query($connection, $query2);
 	$result_row2 = mysqli_fetch_row($result2);
 	$latest_num = $result_row2[0]; // 最新ユーザの番号
 	if(!$result2){
@@ -87,7 +87,7 @@ if(!$db_select){
 		$mig_id = substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 8); //ランダム文字列生成(引継ID)
 		// 発行した引継IDを登録する
 		$query6 = "UPDATE users SET mig_id = '$mig_id' WHERE uid = '$uid'";
-		$result6 = mysql_query($connection, $query6);
+		$result6 = mysqli_query($connection, $query6);
 		if (!$result6) {
         		die ("[error8] Could not query the database: <br />".mysqli_error());;
     		}
