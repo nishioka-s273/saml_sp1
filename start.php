@@ -71,7 +71,7 @@ if(!$db_select){
 	echo "ログインが完了しました！";
     }
 ?></pre>
-<form action="http://ap.local/sample/" method="post">
+<form action="https://ap.local/sample/" method="post">
 <?php
     // 引継IDをすでに発行済み（APに送信済み）か確認する
     $query5 = "SELECT mig_id FROM users WHERE uid = '$uid'";
@@ -98,7 +98,7 @@ if(!$db_select){
 <input type="hidden" name="sp" value="sp1">
 <input type="submit" value="お引越しサービスに登録する">
 </form>
-<form action="http://ap.local/sample/migr.php" method="post">
+<form action="https://ap.local/sample/migr.php" method="post">
 <input type="hidden" name="sp" value="sp1">
 <input type="submit" value="IdPのお引越しを行う">
 </form>
