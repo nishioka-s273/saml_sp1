@@ -50,7 +50,23 @@ else {
 			die ("[error4] Could not query the database: <br />".mysqli_error());
 		}
 		else {
-			echo "IdP Migration Has Completed!<br>";
+			// 移行先IdPからの初回ログイン時に生成された新規ユーザを削除する
+			// delete the newly created user in the first log-in from destination IdP
+			$query3 = "SELECT uid_num FROM users WHERE idp_uid = '$uid_idp'";
+			$result3 = mysqli_query($connection, $query3);
+			if (!$query3) {
+				die ("[error5] Could not query the database: <br />".mysqli_error());
+			}
+			else {
+				$result_row3 = mysqli_fetch_row($result3);
+				$uid_num = $result_row3[0];
+				$query4 = "DELETE FROM users WHERE idp_uid = '$uid_idp' AND uid_num > '$uid_num'";
+				$result4 = mysqli_query($connection, $query4);
+				if (!$query4) {
+					die ("[error6] Could not query the database: <br />".mysqli_error());
+				}
+				echo "IdP Migration Has Completed!<br>";
+			}
 		}
 	}
 }

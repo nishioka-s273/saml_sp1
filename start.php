@@ -106,10 +106,13 @@ if(!$db_select){
 ?>
 <input type="hidden" name="mig_id" value="<?php echo $mig_id; ?>">
 <input type="hidden" name="sp" value="sp1">
+<input type="hidden" name="ret_url" value="https://sp1.local/sample/start.php">
 <input type="submit" value="Register for Migration Service">
 </form>
 <form action="https://ap.local/sample/migr.php" method="post">
 <input type="hidden" name="sp" value="sp1">
+<input type="hidden" name="ret_url" value="https://sp1.local/sample/start.php">
+<input type="hidden" name="ret_url2" value="https://sp1.local/sample/complete.php">
 <input type="submit" value="Migrate the IdP">
 </form>
 <a href="logout.php">Log out</a>
